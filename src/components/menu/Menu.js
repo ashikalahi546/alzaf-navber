@@ -13,20 +13,16 @@ const Menu = () => {
           key={index}
           className="cursor-pointer pl-4"
         >
-          <div className="flex  items-center justify-between group relative hover:text-primary ease-in-out transform duration-300 ">
-            <span className="">
-              {menu?.title}
-            </span>
-            {menu?.submenu && (
-              <MdOutlineChevronRight
-                className={` transtion-transform duration-300 ease-in-out  mr-2 z-20 ${
-                  menu.submenu
-                    ? "group-hover:rotate-180 duration-200  "
-                    : "  "
-                }`}
-              />
-            )}
-          </div>
+          <div className="flex items-center justify-between group relative ease-in-out duration-300 hover:text-primary">
+      <span className="group-hover:text-primary">
+        {menu?.title}
+      </span>
+      {menu?.submenu && (
+        <MdOutlineChevronRight
+          className={` mr-2 z-20  text-livebg ${menu?.submenu ? "transition-transform duration-300 ease-in-out group-hover:rotate-180 group-hover:text-primary" : ""} `}
+        />
+      )}
+    </div>
           {hover === index && menu?.submenu && (
             <ul className="bg-white absolute left-[100%] h-[355px] top-0 w-[230px] flex flex-col gap-y-[10px] py-2.5 duration-300">
            
